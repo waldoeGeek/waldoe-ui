@@ -1,0 +1,73 @@
+
+// Tabs
+// -------------------
+
+// Displays selectable tabs above the editor.
+// Overrides: atom/tabs
+
+.tab-bar {
+  background-color: @tab-bar-background-color;
+  border-bottom: 1px solid @base-border-color;
+
+  .tab {
+    color: @text-color;
+    height: @tab-height;
+    line-height: @tab-height;
+    font-size: @font-size;
+    border: 1px solid @tab-border-color;
+    background-color: @tab-background-color;
+    border-radius: 5px;
+    &.active {
+      color: @text-color-selected;
+      background-color: @tab-background-color-active;
+      border-radius: 5px;
+    }
+
+
+    // Modified Icon (the blue circle) -------------------
+    &.modified:not(:hover) .close-icon {
+      top: 50%;
+      right: @component-padding + 4px; // 4px -> half of icon size
+      margin-top: -3px;
+      border-color: @text-color-info;
+    }
+    &.modified:hover .close-icon {
+      color: currentColor;
+    }
+
+
+    // Close Icon (the X) -------------------
+    .close-icon {
+      color: lighten(@close-icon, 30%);
+      width: 10%;
+      margin: auto;
+      text-align: center;
+    }
+    .close-icon:hover {
+      color: @text-color;
+      // background-color: darken(@close-icon, 5%);
+      // height: 90%;
+      // width: 10%;
+      // border-radius: 5px;
+    }
+    &.active .close-icon:hover {
+      color: @text-color;
+      // height: 90%;
+      // width: 10%;
+      // margin: auto;
+      // border-radius: 5px;
+    }
+
+
+    // Dragging -------------------
+    // Styles get applied while dragging a tab
+    &.is-dragging {
+      background: darken(@tab-background-color, 10%);
+      border-color: transparent;
+      opacity: .5;
+      & .close-icon {
+        visibility: hidden;
+      }
+    }
+  }
+}
