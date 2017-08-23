@@ -7,7 +7,7 @@
     "ui",
     "theme"
   ],
-  "repository": "https://github.com/waldoeGeek/waldoe-dark-ui",
+  "repository": "https://github.com/waldoeGeek/waldoe-ui",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
